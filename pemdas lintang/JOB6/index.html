@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFTERHOURS® - Curated Goods</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">AFTERHOURS®</div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <button class="cart" onclick="toggleCart()">
+        BAG (<span id="count">0</span>)
+    </button>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>WEAR<br>YOUR<br>IDENTITY.</h1>
+        <p>Curated essentials for everyday expression. Discover your own style with our latest collection.</p>
+        <button onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">
+            EXPLORE COLLECTION →
+        </button>
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?w=900" alt="Streetwear">
+</section>
+
+<section class="section" id="shop">
+
+    <div class="section-title">
+        <h2>NEW ARRIVALS.</h2>
+        <input class="search" id="search" placeholder="Search products..." oninput="renderProducts()">
+    </div>
+
+    <div class="categories">
+        <button class="active" onclick="filter('All',this)">All</button>
+        <button onclick="filter('Tops',this)">Tops</button>
+        <button onclick="filter('Bottoms',this)">Bottoms</button>
+        <button onclick="filter('Shoes',this)">Shoes</button>
+        <button onclick="filter('Accessories',this)">Accessories</button>
+    </div>
+
+    <div class="products" id="products"></div>
+
+</section>
+
+<footer id="about">
+    <h2>AFTERHOURS®</h2>
+    <p>NOT JUST CLOTHING. IT'S AN EXPRESSION.</p>
+    <p>© 2026 AFTERHOURS. ALL RIGHTS RESERVED.</p>
+</footer>
+
+<div id="cartPanel">
+    <button class="close" onclick="toggleCart()">×</button>
+    <h2>YOUR BAG.</h2>
+    <br>
+    <div id="cartItems">Your bag is empty.</div>
+    <h3 id="total">Total: Rp0</h3>
+    <button class="checkout" onclick="checkout()">CHECKOUT →</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
